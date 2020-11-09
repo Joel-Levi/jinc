@@ -1,0 +1,54 @@
+{
+  "name": "jinc",
+  "displayName": "",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.51.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:jinc.inProgressIssues",
+    "onCommand:jinc.setup"
+  ],
+  "main": "./dist/main.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jinc.setup",
+        "title": "JINC setup"
+      },
+      {
+        "command": "jinc.inProgressIssues",
+        "title": "Get Issue"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js",
+    "esbuild-base": "esbuild ./extension.js --bundle --outfile=dist/main.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.0",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.51.0",
+    "esbuild": "^0.15.3",
+    "eslint": "^7.9.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.1.3",
+    "node-fetch": "^3.2.10",
+    "rollup": "^2.33.1",
+    "typescript": "^4.0.2",
+    "vscode-test": "^1.4.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0"
+  }
+}
