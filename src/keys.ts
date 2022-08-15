@@ -5,4 +5,4 @@ export const globalStateKeys = {
 	COOKIESTRING : 'cookie-string',
 	API_USER : 'jinc-api-user',
 	API_PASSWORD : 'jinc-api-password',
-}
+} as const

@@ -22,7 +22,7 @@
       },
       {
         "command": "jinc.inProgressIssues",
-        "title": "Get Issue"
+        "title": "Find assigned issues"
       }
     ]
   },
@@ -38,7 +38,7 @@
     "@types/glob": "^7.1.3",
     "@types/mocha": "^8.0.0",
     "@types/node": "^12.11.7",
-    "@types/vscode": "^1.51.0",
+    "@types/vscode": "^1.70.0",
     "esbuild": "^0.15.3",
     "eslint": "^7.9.0",
     "glob": "^7.1.6",

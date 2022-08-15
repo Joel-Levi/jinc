@@ -20,6 +20,36 @@
 		"no-unreachable": "warn",
 		"no-unused-vars": "warn",
 		"constructor-super": "warn",
-		"valid-typeof": "warn"
+		"valid-typeof": "warn",
+		"indent": [ "error", "tab", { "SwitchCase": 1, "ignoredNodes": [ "TemplateLiteral *" ] } ],
+		"quotes": [ "error", "single" ],
+		"semi": [ "error", "always" ],
+		"eqeqeq": [ "error", "always" ],
+		"camelcase": [ "error" ],
+		"no-shadow": [ "error" ],
+		"brace-style": [ "error", "stroustrup", { "allowSingleLine": true } ],
+		"key-spacing": [ "error" ],
+		"no-fallthrough": [ "error" ],
+		"eol-last": [ "error", "always" ],
+		"no-prototype-builtins": "off",
+		"object-curly-spacing": [ "error", "always" ],
+		"array-bracket-spacing": [ "error", "always" ],
+		"comma-dangle": [
+			"error",
+			{
+				"arrays": "always-multiline",
+				"objects": "always-multiline",
+				"imports": "always-multiline",
+				"exports": "always-multiline",
+				"functions": "only-multiline"
+			}
+		],
+		"no-trailing-spaces": [
+			"error",
+			{
+				"ignoreComments": true,
+				"skipBlankLines": true
+			}
+		]
 	}
 }
