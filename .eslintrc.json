@@ -6,6 +6,7 @@
 		"node": true,
 		"mocha": true
 	},
+	"ignorePatterns": ["dist/*.js"],
 	"parserOptions": {
 		"ecmaVersion": 2018,
 		"ecmaFeatures": {

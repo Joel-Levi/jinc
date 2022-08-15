@@ -18,8 +18,8 @@ export const issueCommand = (context: ExtensionContext) =>
 	vscode.commands.registerCommand("jinc.inProgressIssues", async function () {
 		const url = context.globalState.get(globalStateKeys.URL);
 		const apiUsername = context.globalState.get(globalStateKeys.API_USER);
-		const apiPassword = await context.secrets.get(globalStateKeys.API_PASSWORD);
 		const jiraUsername = context.globalState.get(globalStateKeys.USERNAME);
+		const apiPassword = await context.secrets.get(globalStateKeys.API_PASSWORD);
 
 		try {
 			const authHeader = Buffer.from(`${apiUsername}:${apiPassword}`).toString(
@@ -54,13 +54,13 @@ export const issueCommand = (context: ExtensionContext) =>
 				issues.map((issue) => `${issue.key}: ${issue.name}`),
 				{ title: `Issues found for ${jiraUsername}` }
 			);
+				
+			if (!pickedOption) {
+				throw new Error('Something went wrong with getting your selection.')
+			}
 			
-		if (!pickedOption) {
-			throw new Error('Something went wrong with getting your selection.')
-		}
-		
-		const pickedOptionKey = pickedOption.split(":")[0];
-			await vscode.env.clipboard.writeText(`${pickedOptionKey}: `)
+			const pickedOptionKey = pickedOption.split(":")[0];
+				await vscode.env.clipboard.writeText(`${pickedOptionKey}: `)
 		} catch (error) {
 			console.error(error);
 			vscode.window.showInformationMessage(error.message);
