@@ -27,7 +27,7 @@ export const issueCommand = (context: ExtensionContext) =>
 			);
 
 			const response = await fetch(
-				`${url}/rest/api/2/search?jql=assignee=${jiraUsername} and (status="In progress" or status="In Testing" or status="In Review")&fields=summary,parent`,
+				`${url}/rest/api/2/search?jql=assignee=${jiraUsername} and (status="In progress" or status="In Testing" or status="In Review" or status="Open" or status="Reopened")&fields=summary,parent`,
 				{ headers: { Authorization: `Basic ${authHeader}` } }
 			);
 			const data = await response.json() as unknown as { issues: Issue[] };

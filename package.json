@@ -4,8 +4,9 @@
   "description": "",
   "version": "1.0.0",
   "engines": {
-    "vscode": "^1.51.0"
+    "vscode": "^1.70.0"
   },
+  "publisher": "JoëlB",
   "categories": [
     "Other"
   ],
