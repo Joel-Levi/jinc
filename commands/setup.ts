@@ -27,6 +27,6 @@ export const setupCommand = (context : ExtensionContext) =>
 		await secrets.store(globalStateKeys.API_PASSWORD, apiPassword);
 		
 		vscode.window.showInformationMessage(
-			"JINC Setup complete. Run JINC.getIssue"
+			"JINC Setup complete, you can now run: Find assigned issues"
 		);
 	});

@@ -19,6 +19,10 @@ Finds the issues for you that have the status: In Progress, In Testing or In Rev
 
 Finds the issues for you that have the status: In Progress, In Testing or In Review.
 
+```Copy last user Jira key```
+
+Get the last copied Jira key from storage.
+
 ## Notes
 
 I wrote this extension mainly for myself, If you have any ideas for things to add, shoot me a message on teams

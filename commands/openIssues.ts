@@ -16,9 +16,9 @@ type Issue = {
 
 export const issueCommand = (context: ExtensionContext) =>
 	vscode.commands.registerCommand("jinc.inProgressIssues", async function () {
-		const url = context.globalState.get(globalStateKeys.URL);
-		const apiUsername = context.globalState.get(globalStateKeys.API_USER);
-		const jiraUsername = context.globalState.get(globalStateKeys.USERNAME);
+		const url = context.globalState.get<string>(globalStateKeys.URL);
+		const apiUsername = context.globalState.get<string>(globalStateKeys.API_USER);
+		const jiraUsername = context.globalState.get<string>(globalStateKeys.USERNAME);
 		const apiPassword = await context.secrets.get(globalStateKeys.API_PASSWORD);
 
 		try {
@@ -60,7 +60,8 @@ export const issueCommand = (context: ExtensionContext) =>
 			}
 			
 			const pickedOptionKey = pickedOption.split(":")[0];
-				await vscode.env.clipboard.writeText(`${pickedOptionKey}: `)
+			await vscode.env.clipboard.writeText(`${pickedOptionKey}: `)
+			context.globalState.update(globalStateKeys.LAST_USED_VALUE, `${pickedOptionKey}: `);
 		} catch (error) {
 			console.error(error);
 			vscode.window.showInformationMessage(error.message);

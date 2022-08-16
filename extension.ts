@@ -2,6 +2,7 @@ import type { ExtensionContext } from "vscode"
 import { issueCommand } from "./commands/openIssues";
 import { setupCommand } from "./commands/setup";
 import { changeUsernameCommand } from "./commands/changeUsername";
+import { copyLastUsedCommand } from './commands/copyLastUsed';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -16,6 +17,7 @@ function activate(context: ExtensionContext) {
   context.subscriptions.push(setupCommand(context));
   context.subscriptions.push(changeUsernameCommand(context));
   context.subscriptions.push(issueCommand(context));
+  context.subscriptions.push(copyLastUsedCommand(context));
 }
 
 exports.activate = activate;
