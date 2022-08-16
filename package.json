@@ -11,6 +11,7 @@
     "Other"
   ],
   "activationEvents": [
+    "onCommand:jinc.changeUsername",
     "onCommand:jinc.inProgressIssues",
     "onCommand:jinc.setup"
   ],
@@ -19,11 +20,15 @@
     "commands": [
       {
         "command": "jinc.setup",
-        "title": "JINC setup"
+        "title": "Jira issue key copier setup"
       },
       {
         "command": "jinc.inProgressIssues",
         "title": "Find assigned issues"
+      },
+      {
+        "command": "jinc.changeUsername",
+        "title": "Change Jira username"
       }
     ]
   },
